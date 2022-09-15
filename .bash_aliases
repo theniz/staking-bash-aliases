@@ -59,3 +59,4 @@ alias s.list="alias"
 
 # Update (22/09/15)
 alias v.vote='sudo journalctl --since -60min -u validator | grep \"Previous epoch aggregated voting summary\"'
+
