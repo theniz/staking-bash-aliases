@@ -57,3 +57,5 @@ alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubuserc
 alias b.connect="curl -s http://localhost:3500/eth/v1alpha1/node/eth1/connections | jq"
 alias s.list="alias"
 
+# Update (22/09/15)
+alias b.connect="sudo journalctl --since -60min -u validator | grep "Previous epoch aggregated voting summary""
