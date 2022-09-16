@@ -47,9 +47,9 @@ alias v.disable="sudo systemctl disable validator"
 alias b.tpeer="curl -s http://localhost:8080/metrics | grep \"p2p_topic_peer_count\""
 alias n.itemp="cat /sys/class/thermal/thermal_zone*/temp"
 alias g.ver="geth version"
-alias g.error="sudo journalctl -u geth | grep -e warning -e error | tail -30"
-alias b.error="sudo journalctl -u beacon | grep -e warning -e error | tail -30"
-alias v.error="sudo journalctl -u validator | grep -e warning -e error | tail -30"
+alias g.error="journalctl -u geth | grep -e warning -e error | tail -30"
+alias b.error="journalctl -u beacon | grep -e warning -e error | tail -30"
+alias v.error="journalctl -u validator | grep -e warning -e error | tail -30"
 alias b.chealth="curl -X GET \"https://beaconcha.in/api/healthz\" -H \"accept: text/plain\" -w \"\n\""
 
 # Update (22/08/31)
@@ -58,4 +58,4 @@ alias b.connect="curl -s http://localhost:3500/eth/v1alpha1/node/eth1/connection
 alias s.list="alias"
 
 # Update (22/09/15)
-alias v.vote='sudo journalctl --since -60min -u validator | grep \"Previous epoch aggregated voting summary\"'
+alias v.vote='journalctl --since -60min -u validator | grep \"Previous epoch aggregated voting summary\"'
