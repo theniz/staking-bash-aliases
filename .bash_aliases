@@ -56,6 +56,7 @@ alias b.chealth="curl -X GET \"https://beaconcha.in/api/healthz\" -H \"accept: t
 # Update (22/08/31)
 alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubusercontent.com/theniz/staking-bash-aliases/main/.bash_aliases \
                 && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v220919\"'
+alias s.ver='echo \“Version - 220919\"'
 alias b.connect="curl -s http://localhost:3500/eth/v1alpha1/node/eth1/connections | jq"
 alias s.list="alias"
 
