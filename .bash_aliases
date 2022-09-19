@@ -67,7 +67,6 @@ alias v.vote='journalctl --since -60min -u validator | grep "Previous epoch aggr
 alias n.speed='cd ~ \
                && echo \“Writing...\" \
                && dd if=/dev/zero of=/home/theniz/deleteme.dat bs=32M count=64 oflag=direct \
-               && echo -e '\n' \
                && echo \“Reading...\" \
                && dd if=/home/theniz/deleteme.dat of=/dev/null bs=32M count=64 iflag=direct \
                && echo \“*** Done ***\" \
