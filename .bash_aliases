@@ -33,6 +33,7 @@ alias v.health='curl http://localhost:8081/healthz'
 alias b.chain="curl -s -X GET \"http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead\" -H \"accept: application/json\" | jq"
 alias g.sync="curl -s -X POST 127.0.0.1:8545 -H \"Content-Type: application/json\" --data '{\"jsonrpc\":\"2.0\",\"method\":\"eth_syncing\",\"id\":1}' | jq"
 alias b.sync="curl -s http://localhost:3500/eth/v1/node/syncing | jq"
+
 alias p.ver="curl -s -X GET \"http://127.0.0.1:3500/eth/v1alpha1/node/version\" -H \"accept: application/json\" | jq [.version]"
 alias v.idist="sudo journalctl -u validator | grep -a -i averageInclusionDistance | tail -30"
 alias b.prate="curl -s -X GET \"http://127.0.0.1:3500/eth/v1alpha1/validators/participation\" -H \"accept: application/json\" | jq"
@@ -53,9 +54,18 @@ alias v.error="journalctl -u validator | grep -e warning -e error | tail -30"
 alias b.chealth="curl -X GET \"https://beaconcha.in/api/healthz\" -H \"accept: text/plain\" -w \"\n\""
 
 # Update (22/08/31)
-alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubusercontent.com/theniz/staking-bash-aliases/main/.bash_aliases && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v220915\"'
+alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubusercontent.com/theniz/staking-bash-aliases/main/.bash_aliases && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v220919\"'
 alias b.connect="curl -s http://localhost:3500/eth/v1alpha1/node/eth1/connections | jq"
 alias s.list="alias"
 
 # Update (22/09/15)
 alias v.vote='journalctl --since -60min -u validator | grep "Previous epoch aggregated voting summary"'
+
+# Update (22/09/19)
+alias n.speed='cd ~ \
+               && echo \“Writing...\" \
+               && dd if=/dev/zero of=/home/theniz/deleteme.dat bs=32M count=64 oflag=direct \
+               && echo \“Reading...\" \
+               && dd if=/home/theniz/deleteme.dat of=/dev/null bs=32M count=64 iflag=direct \
+               && echo \“*** Done ***\" \
+               && rm deleteme.dat'
