@@ -82,5 +82,5 @@ alias m.log='sudo journalctl -f -u mevboost.service'
 alias m.start='sudo systemctl start mevboost'
 alias m.status='sudo systemctl status mevboost'
 alias m.stop='sudo systemctl stop mevboost'
-alias m.ver='/home/eth2/mevboost/bin/mev-boost -version'
+alias m.ver='sudo /home/eth2/mevboost/bin/mev-boost -version'
 
