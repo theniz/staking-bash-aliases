@@ -71,3 +71,16 @@ alias n.speed='cd ~ \
                && dd if=deleteme.dat of=/dev/null bs=32M count=64 iflag=direct \
                && echo \“*** Done ***\" \
                && rm deleteme.dat'
+
+# Update (22/11/11)
+alias m.disable='sudo systemctl disable mevboost'
+alias m.edit='sudo nano /etc/systemd/system/mevboost.service'
+alias m.enable='sudo systemctl enable mevboost'
+alias m.error='journalctl -u mevboost | grep -e warning -e error | tail -30'
+alias m.init='sudo systemctl start mevboost && sudo journalctl -f -u mevboost.service'
+alias m.log='sudo journalctl -f -u mevboost.service'
+alias m.start='sudo systemctl start mevboost'
+alias m.status='sudo systemctl status mevboost'
+alias m.stop='sudo systemctl stop mevboost'
+alias m.ver='/home/eth2/mevboost/bin/mev-boost -version'
+
