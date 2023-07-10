@@ -88,6 +88,6 @@ alias m.ver='sudo /home/eth2/mevboost/bin/mev-boost -version'
 alias net.edit='sudo nano /etc/netplan/00-installer-config.yaml'
 alias sm.start='sudo service smbd start'
 alias sm.stop='sudo service smbd stop'
-alias p.check='g.sync && sleep 1s && b.sync && sleep 1s && g.peer && sleep 1s && b.peer && b.health && sleep 1s && v.health'
+alias p.check='g.sync && sleep 1s && b.sync && sleep 1s && g.peer && sleep 1s && echo \“Beacon Peers\" && b.peer && b.health && sleep 1s && v.health'
 
 
