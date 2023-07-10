@@ -84,10 +84,10 @@ alias m.status='sudo systemctl status mevboost'
 alias m.stop='sudo systemctl stop mevboost'
 alias m.ver='sudo /home/eth2/mevboost/bin/mev-boost -version'
 
-# Update (23/07/10)
+# Update (23/07/11)
 alias net.edit='sudo nano /etc/netplan/00-installer-config.yaml'
 alias sm.start='sudo service smbd start'
 alias sm.stop='sudo service smbd stop'
-alias p.check='b.health && sleep 1s && v.health && sleep 1s && g.sync && sleep 1s && sleep 1s && b.sync && sleep 1s && g.peer && sleep 1s && b.peer'
+alias p.check='b.health && sleep 1s && v.health && sleep 1s && b.sync && sleep 1s && g.sync && sleep 1s && g.peer && sleep 1s && b.peer'
 
 
