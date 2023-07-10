@@ -55,8 +55,8 @@ alias b.chealth="curl -X GET \"https://beaconcha.in/api/healthz\" -H \"accept: t
 
 # Update (22/08/31)
 alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubusercontent.com/theniz/staking-bash-aliases/main/.bash_aliases \
-                && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v230710\"'
-alias s.ver='echo \“Version - 230710\"'
+                && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v230711\"'
+alias s.ver='echo \“Version - 230711\"'
 alias b.connect="curl -s http://localhost:3500/eth/v1alpha1/node/eth1/connections | jq"
 alias s.list="alias"
 
@@ -88,6 +88,6 @@ alias m.ver='sudo /home/eth2/mevboost/bin/mev-boost -version'
 alias net.edit='sudo nano /etc/netplan/00-installer-config.yaml'
 alias sm.start='sudo service smbd start'
 alias sm.stop='sudo service smbd stop'
-alias p.check='b.health && v.health && g.sync && b.sync && g.peer && b.peer'
+alias p.check='b.health && sleep 1s && v.health && sleep 1s && g.sync && sleep 1s && sleep 1s && b.sync && sleep 1s && g.peer && sleep 1s && b.peer'
 
 
