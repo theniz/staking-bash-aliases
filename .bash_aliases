@@ -89,5 +89,5 @@ alias net.edit='sudo nano /etc/netplan/00-installer-config.yaml'
 alias sm.start='sudo service smbd start'
 alias sm.stop='sudo service smbd stop'
 alias n.check='g.sync && sleep 1s && b.sync && sleep 1s && g.peer && sleep 1s && echo \“Beacon Peers\" && b.peer && sleep 1s && b.health && sleep 1s && v.health'
-
-
+alias ssh.edit='sudo nano /etc/ssh/sshd_config'
+alias sm.edit='sudo nano /etc/samba/smb.conf'
