@@ -48,15 +48,15 @@ alias v.disable="sudo systemctl disable validator"
 alias b.tpeer="curl -s http://localhost:8080/metrics | grep \"p2p_topic_peer_count\""
 alias n.itemp="cat /sys/class/thermal/thermal_zone*/temp"
 alias g.ver="geth version"
-alias g.error="journalctl -u geth | grep -e warning -e error | tail -30"
-alias b.error="journalctl -u beacon | grep -e warning -e error | tail -30"
-alias v.error="journalctl -u validator | grep -e warning -e error | tail -30"
+alias g.error="journalctl -u geth | grep -e level=warning -e level=error | tail -30"
+alias b.error="journalctl -u beacon | grep -e level=warning -e level=error | tail -30"
+alias v.error="journalctl -u validator | grep -e level=warning -e level=error | tail -30"
 alias b.chealth="curl -X GET \"https://beaconcha.in/api/healthz\" -H \"accept: text/plain\" -w \"\n\""
 
 # Update (22/08/31)
 alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubusercontent.com/theniz/staking-bash-aliases/main/.bash_aliases \
-                && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v230711\"'
-alias s.ver='echo \“Version - 230711\"'
+                && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v230711.1\"'
+alias s.ver='echo \“Version - 230711.1\"'
 alias b.connect="curl -s http://localhost:3500/eth/v1alpha1/node/eth1/connections | jq"
 alias s.list="alias"
 
