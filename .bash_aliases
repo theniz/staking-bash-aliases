@@ -93,8 +93,8 @@ alias sm.edit='sudo nano /etc/samba/smb.conf'
 alias pm.ver='/usr/local/bin/prometheus --version | grep prometheus && \
               /usr/local/bin/node_exporter --version | grep node_exporter && \
               /usr/local/bin/blackbox_exporter --version | grep blackbox_exporter && \
-              /usr/local/bin/json_exporter --config.file=/etc/json_exporter/json_exporter.yml --version | grep json_exporter && \
-              echo -n \"Grafana \" && grafana-server -v'
+              /usr/local/bin/json_exporter --config.file=/etc/json_exporter/json_exporter.yml --version | grep json_exporter'
+alias gr.ver='echo -n "Grafana " && grafana-server -v'
 
 # Insert new update here....
 
