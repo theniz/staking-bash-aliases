@@ -101,5 +101,5 @@ alias gr.ver='echo -n "Grafana " && grafana-server -v'
 # Version Update
 alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubusercontent.com/theniz/staking-bash-aliases/main/.bash_aliases \
                 && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v240318\"'
-alias s.ver='echo \“Short Cut Key Version - 240318\"'
+alias s.ver='echo \“Shortcut Keys Version - 240318\"'
 
