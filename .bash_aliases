@@ -54,9 +54,6 @@ alias v.error="journalctl -u validator | grep -e level=warning -e level=error | 
 alias b.chealth="curl -X GET \"https://beaconcha.in/api/healthz\" -H \"accept: text/plain\" -w \"\n\""
 
 # Update (22/08/31)
-alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubusercontent.com/theniz/staking-bash-aliases/main/.bash_aliases \
-                && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v230711.1\"'
-alias s.ver='echo \“Version - 230711.1\"'
 alias b.connect="curl -s http://localhost:3500/eth/v1alpha1/node/eth1/connections | jq"
 alias s.list="alias"
 
@@ -91,3 +88,17 @@ alias sm.stop='sudo service smbd stop'
 alias n.check='g.sync && sleep 1s && b.sync && sleep 1s && g.peer && sleep 1s && echo \“Beacon Peers\" && b.peer && sleep 1s && b.health && sleep 1s && v.health'
 alias ssh.edit='sudo nano /etc/ssh/sshd_config'
 alias sm.edit='sudo nano /etc/samba/smb.conf'
+
+# Update (24/03/18)
+alias pm.ver='/usr/local/bin/prometheus --version | grep prometheus && \
+              /usr/local/bin/node_exporter --version | grep node_exporter && \
+              /usr/local/bin/blackbox_exporter --version | grep blackbox_exporter && \
+              /usr/local/bin/json_exporter --config.file=/etc/json_exporter/json_exporter.yml --version | grep json_exporter'
+
+# Insert new update here....
+
+# Version Update
+alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubusercontent.com/theniz/staking-bash-aliases/main/.bash_aliases \
+                && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v240318\"'
+alias s.ver='echo \“Version - 240318\"'
+
