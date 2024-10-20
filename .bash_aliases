@@ -27,16 +27,16 @@ alias n.size='sudo du -hs /home/eth2/eth1 && sudo du -hs /home/eth2/beacon && su
 alias n2.size='sudo du -hs /home/eth2/eth1 && sudo du -hs /home2/eth2/eth1 && sudo du -hs /home/eth2/beacon && sudo du -hs /home/eth2/validator && df -h --total | grep total'
 # ShortCut Key for Node Maintenance (20/12/01)
 alias g.peer='curl -s http://localhost:6060/debug/metrics/prometheus | grep p2p_peers'
-alias b.peer='curl -s "localhost:3500/eth/v1alpha1/node/peers" | jq ".peers[].address" | wc -l'
+alias b.peer='curl -s "localhost:3500/eth/v1/node/peer_count" | jq ".data.connected"'
 alias b.health='curl http://localhost:8080/healthz'
 alias v.health='curl http://localhost:8081/healthz'
-alias b.chain="curl -s -X GET \"http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead\" -H \"accept: application/json\" | jq"
+# alias b.chain="curl -s -X GET \"http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead\" -H \"accept: application/json\" | jq"
 alias g.sync="curl -s -X POST 127.0.0.1:8545 -H \"Content-Type: application/json\" --data '{\"jsonrpc\":\"2.0\",\"method\":\"eth_syncing\",\"id\":1}' | jq"
 alias b.sync="curl -s http://localhost:3500/eth/v1/node/syncing | jq"
 
-alias p.ver="curl -s -X GET \"http://127.0.0.1:3500/eth/v1alpha1/node/version\" -H \"accept: application/json\" | jq [.version]"
+alias p.ver='curl -s "localhost:3500/eth/v1/node/version" | jq ".data.version"'
 alias v.idist="sudo journalctl -u validator | grep -a -i averageInclusionDistance | tail -30"
-alias b.prate="curl -s -X GET \"http://127.0.0.1:3500/eth/v1alpha1/validators/participation\" -H \"accept: application/json\" | jq"
+# alias b.prate="curl -s -X GET \"http://127.0.0.1:3500/eth/v1alpha1/validators/participation\" -H \"accept: application/json\" | jq"
 
 # Update (20/12/30)
 alias g.enable="sudo systemctl enable geth"
@@ -54,7 +54,7 @@ alias v.error="journalctl -u validator | grep -e level=warning -e level=error | 
 alias b.chealth="curl -X GET \"https://beaconcha.in/api/healthz\" -H \"accept: text/plain\" -w \"\n\""
 
 # Update (22/08/31)
-alias b.connect="curl -s http://localhost:3500/eth/v1alpha1/node/eth1/connections | jq"
+# alias b.connect="curl -s http://localhost:3500/eth/v1alpha1/node/eth1/connections | jq"
 alias s.list="alias"
 
 # Update (22/09/15)
@@ -100,6 +100,6 @@ alias gr.ver='echo -n "Grafana " && grafana-server -v'
 
 # Version Update
 alias s.update='cd ~ && rm ~/.bash_aliases && curl -s -O https://raw.githubusercontent.com/theniz/staking-bash-aliases/main/.bash_aliases \
-                && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v240318\"'
-alias s.ver='echo \“Shortcut Keys Version - 240318\"'
+                && source ~/.bash_aliases && echo \“*** Shortcut Keys Updated Successfully...v241020\"'
+alias s.ver='echo \“Shortcut Keys Version - 241020\"'
 
